@@ -36,5 +36,6 @@ namespace warehouse
         /// Цена (без НДС)
         /// </summary>
         public decimal price { get; set; }
+        public int maxpr { get; set; }
     }
 }

@@ -94,7 +94,7 @@ namespace warehouse
             infoform.Text = "Добавление товара";
             if (infoform.ShowDialog(this) == DialogResult.OK)
             {
-                CreateDB(options, infoform);
+                CreateDB(options, infoform.tovar);
                 CalculateStats();
                 dataGridView1.DataSource = ReadDB(options);
             }
@@ -122,13 +122,13 @@ namespace warehouse
             }
         }
 
-        private static void CreateDB(DbContextOptions<ApplicationContext> options, tovarinfoform form)
+        private static void CreateDB(DbContextOptions<ApplicationContext> options, Tovar tovari)
         {
             using (var db = new ApplicationContext(options))
             {
                 Tovar t = new Tovar();
-                form.Tovar.Id = t.Id;
-                db.TovarDB.Add(form.Tovar);
+                tovari.Id = t.Id;
+                db.TovarDB.Add(tovari);
                 db.SaveChanges();
             }
         }
@@ -174,8 +174,7 @@ namespace warehouse
 
         public void CalculateStats()
         {
-            toolStripStatusLabel1.Text =$"Общее количество: {ReadDB(options).Count.ToString()}" ;
-            //decimal sum3=0;
+            toolStripStatusLabel1.Text =$"Общее количество: {ReadDB(options).Count}" ;
               var  sum = ReadDB(options).Sum(x => x.kolvo * x.price);            
             toolStripStatusLabel3.Text = $"Без НДС: {sum} ₽";
             var sum3 = ReadDB(options).Sum(x => (x.kolvo * x.price)+(x.kolvo*x.price)*0.2m);

@@ -58,6 +58,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -244,7 +245,8 @@
             this.Column4,
             this.Column5,
             this.Column6,
-            this.Column7});
+            this.Column7,
+            this.Column9});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 55);
             this.dataGridView1.Name = "dataGridView1";
@@ -328,6 +330,16 @@
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "maxpr";
+            this.Column9.HeaderText = "maxpr";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Visible = false;
+            this.Column9.Width = 125;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -383,5 +395,6 @@
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column9;
     }
 }

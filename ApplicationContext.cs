@@ -14,6 +14,7 @@ namespace warehouse
             : base(options)
 
         {
+            
             //Database.EnsureDeleted();
             Database.EnsureCreated();
         }
